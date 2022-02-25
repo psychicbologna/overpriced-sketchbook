@@ -1,0 +1,51 @@
+.Post-Gallery {
+    position: relative;
+    border: blue 1px solid;
+    margin: 0px;
+}
+
+.Post-Gallery-ul {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+    padding-left: 0;
+}
+
+.Post-Gallery-li {
+    display: block;
+    list-style-type: none;
+    width: 100vw;
+}
+
+.Post-Gallery-left, .Post-Gallery-right {
+    z-index: 50;
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 100px;
+    transition: background-color .25s;
+    margin: 1em;
+    top: 50%;
+    transform: traslateY(-50%);
+}
+
+.Post-Gallery-left:hover, .Post-Gallery-right:hover {
+    background-color: red;
+}
+
+.Post-Gallery-left:active, .Post-Gallery-right:active {
+    background-color: yellow;
+}
+
+.Post-Gallery-left {
+    position: absolute;
+    left: 0px;
+}
+
+.Post-Gallery-right {
+    position: absolute;
+    right: 0px;
+}
+
+.Post-Gallery-img {}

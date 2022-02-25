@@ -1,0 +1,63 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0px;
+}
+
+.OPSketchbook {
+  text-align: center;
+  display: grid;
+  align-content: stretch;
+  height: 100vh;
+  grid: "header header"150px "body body"min-content "footer footer"300px / 300px auto;
+}
+
+.Header {
+  grid-area: header;
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  background-color: #282c34;
+  color: white;
+  z-index: 100;
+}
+
+.Body {
+  grid-area: body;
+  overflow: hidden;
+}
+
+.Sidebar {
+  grid-area: sidebar;
+  display: none;
+}
+
+.Footer {
+  grid-area: footer;
+  background-color: #282c34;
+  color: white;
+}
+
+.Sidebar-nav {
+  border: 1px solid red;
+}
+
+.Sidebar-nav-ul {}
+
+.Sidebar-nav-link {}
+
+.Nav-ul .App-link {
+  color: #61dafb;
+}
+
+/* div {
+  border: blue 2px dashed
+} */
