@@ -18,18 +18,6 @@ export function Image({ className, src, alt }) {
     return <img className={className} src={src} alt={alt} />
 }
 
-//Display an image associated with a gallery (nested)
-export function GalleryImage({ key, className, src, alt }) {
-    return <li className={`${className}-li`}>
-        <img
-            className={`${className}-img`}
-            src={src}
-            alt={alt}
-            onClick={(e) => lightbox(e)} />
-    </li>
-}
-
-
 //Transform the browser for lightbox
 
 export function lightbox(e) {

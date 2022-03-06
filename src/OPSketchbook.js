@@ -3,8 +3,6 @@ import './OPSketchbook.css';
 import Post from './components/Post/Post';
 import { STORE } from './STORE';
 
-console.dir(STORE);
-
 const Utils = {
   postsList(posts) {
     return posts.map((post, i) =>
@@ -36,7 +34,7 @@ function OPSketchbook() {
           </ul>
         </nav>
       </div>
-      <div className="Body">
+      <div className="Content">
         {STORE.posts.length ? Utils.postsList(STORE.posts) : null}
       </div>
       <div className="Footer">

@@ -1,50 +1,184 @@
 .Post-Gallery {
     position: relative;
+    display: block;
     border: blue 1px solid;
     margin: 0px;
 }
 
 .Post-Gallery-ul {
-    display: flex;
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     width: fit-content;
+    height: fit-content;
     overflow: hidden;
     padding-left: 0;
 }
 
-.Post-Gallery-li {
-    display: block;
-    list-style-type: none;
-    width: 100vw;
+@keyframes fadeEnterLeft {
+    from {
+        bottom: 100px
+    }
+
+    to {
+        bottom: 0px
+    }
+
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
 }
 
-.Post-Gallery-left, .Post-Gallery-right {
+@keyframes fadeCenterLeft {
+    from {
+        top: 300px
+    }
+
+    to {
+        top: 0px
+    }
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeEnterRight {
+    from {
+        top: 100px
+    }
+
+    to {
+        top: 0px
+    }
+
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeCenterRight {
+    from {
+        bottom: 300px
+    }
+
+    to {
+        bottom: 0px
+    }
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+.Post-Gallery-li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.Post-Gallery-li[direction='left-left'] {
+    animation: fadeEnterLeft .20s ease-in-out;
+}
+
+.Post-Gallery-li[direction='center-left'] {
+    animation: fadeCenterLeft .20s ease-in-out;
+}
+
+.Post-Gallery-li[direction='right-left'] {
+    animation: fadeEnterLeft .20s ease-in-out;
+}
+
+.Post-Gallery-li[direction='left-right'] {
+    animation: fadeEnterRight .20s ease-in-out;
+}
+
+.Post-Gallery-li[direction='center-right'] {
+    animation: fadeCenterRight .20s ease-in-out;
+}
+
+.Post-Gallery-li[direction='right-right'] {
+    animation: fadeEnterRight .20s ease-in-out;
+}
+
+.Gallery-left > .Post-Gallery-img, .Gallery-right > .Post-Gallery-img {
+    opacity: 75%;
+    max-height: 90%;
+    box-sizing: content-box;
+}
+
+.Post-Gallery-left-Button, .Post-Gallery-right-Button {
     z-index: 50;
+    border: 0;
     height: 50px;
     width: 50px;
+    position: absolute;
     background-color: blue;
     border-radius: 100px;
     transition: background-color .25s;
     margin: 1em;
     top: 50%;
-    transform: traslateY(-50%);
+
 }
 
-.Post-Gallery-left:hover, .Post-Gallery-right:hover {
+.Post-Gallery-left-Button:hover, .Post-Gallery-right-Button:hover {
     background-color: red;
 }
 
-.Post-Gallery-left:active, .Post-Gallery-right:active {
+.Post-Gallery-left-Button:active, .Post-Gallery-right-Button:active {
     background-color: yellow;
 }
 
-.Post-Gallery-left {
-    position: absolute;
+.Post-Gallery-left-Button { 
     left: 0px;
 }
 
-.Post-Gallery-right {
-    position: absolute;
+.Post-Gallery-right-Button {
     right: 0px;
 }
 

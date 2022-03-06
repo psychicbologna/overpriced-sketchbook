@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+  color: #e0e0d0;
 }
 
 #root {
@@ -17,7 +18,7 @@ body {
   display: grid;
   align-content: stretch;
   height: 100vh;
-  grid: "header header"150px "body body"min-content "footer footer"300px / 300px auto;
+  grid: "header header"150px "content content"min-content "footer footer"300px / 300px auto;
 }
 
 .Header {
@@ -25,14 +26,15 @@ body {
   height: 150px;
   width: 100%;
   position: fixed;
-  background-color: #282c34;
+  background-color: #2a2733;
   color: white;
   z-index: 100;
 }
 
-.Body {
-  grid-area: body;
+.Content {
+  grid-area: content;
   overflow: hidden;
+  background-color: #332a27;
 }
 
 .Sidebar {
@@ -42,7 +44,7 @@ body {
 
 .Footer {
   grid-area: footer;
-  background-color: #282c34;
+  background-color: #27332a;
   color: white;
 }
 
